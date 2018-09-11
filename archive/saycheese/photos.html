@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>7 acts of love: archive: say cheese</title>
+<script language="JavaScript" type="text/javascript" src="../../js/x.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../js/sevenacts.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+function popthumb(which){
+  var imgFldr = 'images/photos/1000x700/';
+  var win_w = 1000;
+  var win_h = 700;
+  if(screen.width){
+    if(screen.width<1000){
+      imgFldr = 'images/photos/700x490/';
+      win_w = 700;
+      win_h = 490;
+    }
+  }
+  var win_x = Math.round((xClientWidth()-win_w)/2);
+  var win_y = Math.round((xClientHeight()-win_h)/2);
+  popup('photos_popup.html?p='+imgFldr+which+'.jpg',win_w,win_h,win_x,win_y);
+}
+var thumbs_x=[[20,90,170,267,400],[130,250,379],[10,64,252,136,200,315,410],[20,110,167,230,300,390],[10,105,210,312,400],[25,108,220,270,382,410,210,290,120,178,50,450,340,280],[20,230,376]];
+var thumbs_y=[[120,155,100,127,145],[910,875,920],[420,372,446,410,380,430,420],[570,563,610,574,536,590],[740,700,770,742,758],[260,240,330,217,290,235,280,270,295,225,320,280,222,319],[1010,1070,1034]]
+var _x = 0;
+var _y = 0;
+window.onload = function()
+{
+    _x += (xClientWidth() >= 600) ? (xClientWidth() - 600)/2: 0;
+    var blobx = [0,0,0,0,0,0,0];
+    xMoveTo('photos_text', _x + 60, _y + 23);
+    xZIndex('photos_text', 3);
+    xShow('photos_text');
+    xMoveTo('small_yellow_blob', _x + 40, _y + 10);
+    xZIndex('small_yellow_blob', 1);
+    xShow('small_yellow_blob');
+    blobx[0] = _x + 50 + (Math.floor(Math.random() * _x));
+    xMoveTo('blue_blob', blobx[0], _y + 75);
+    xZIndex('blue_blob', 1);
+    xShow('blue_blob');
+    xMoveTo('berlin_text', blobx[0] + 360, _y + 74);
+    xZIndex('berlin_text', 3);
+    xShow('berlin_text');
+    blobx[1] = _x - (Math.floor(Math.random() * _x))
+    xMoveTo('pink_blob', blobx[1], _y + 822);
+    xZIndex('pink_blob', 1);
+    xShow('pink_blob');
+    xMoveTo('ljublijana_text', Math.abs(blobx[1] -50), _y + 830);
+    xZIndex('ljublijana_text', 3);
+    xShow('ljublijana_text');
+    blobx[2] = _x + 28 + (Math.floor(Math.random() * _x));
+    xMoveTo('purple_blob', blobx[2], _y + 375);
+    xZIndex('purple_blob', 1);
+    xShow('purple_blob');
+    xMoveTo('liverpool_text', blobx[2] + 340, _y + 375);
+    xZIndex('liverpool_text', 3);
+    xShow('liverpool_text');
+    blobx[3] = _x + 80 - (Math.floor(Math.random() * _x));
+    xMoveTo('green_blob', blobx[3], _y + 520);
+    xZIndex('green_blob', 1);
+    xShow('green_blob');
+    xMoveTo('ny_text', Math.abs(blobx[3] -50), _y + 520);
+    xZIndex('ny_text', 3);
+    xShow('ny_text');
+    blobx[4] = _x + 28 + (Math.floor(Math.random() * _x));
+    xMoveTo('orange_blob', blobx[4], _y + 670);
+    xZIndex('orange_blob', 1);
+    xShow('orange_blob');
+    xMoveTo('bristol_text', blobx[4] + 340, _y + 665);
+    xZIndex('bristol_text', 3);
+    xShow('bristol_text');
+    blobx[5] = _x + 28 - (Math.floor(Math.random() * _x));
+    xMoveTo('red_blob', blobx[5], _y + 215);
+    xZIndex('red_blob', 1);
+    xShow('red_blob');
+    xMoveTo('london_text', Math.abs(blobx[5] -50), _y + 200);
+    xZIndex('london_text', 3);
+    xShow('london_text');
+    blobx[6] = _x + 28 + (Math.floor(Math.random() * _x));
+    xMoveTo('yellow_blob', blobx[6], _y + 980);
+    xZIndex('yellow_blob', 1);
+    xShow('yellow_blob');
+    xMoveTo('linz_text', blobx[6] + 340, _y + 965);
+    xZIndex('linz_text', 3);
+    xShow('linz_text');
+    for(j=0;j<blobx.length;j++){
+      for(i=0;i<thumbs_x[j].length;i++){
+        xMoveTo('thumb'+j+i,blobx[j]+thumbs_x[j][i],thumbs_y[j][i]);
+        xZIndex('thumb'+j+i,2);
+        xShow('thumb'+j+i);
+      }
+    }
+    xMoveTo('archive_spine', _x+10, _y + 10);
+    xZIndex('archive_spine', 9);
+    xShow('archive_spine');
+    xMoveTo('saycheese_spine', _x + 280, _y + 12);
+    xZIndex('saycheese_spine', 9);
+    xShow('saycheese_spine');
+    xAddEventListener(document, "mousemove", move, false);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../css/sevenacts.css" type="text/css" />
+</head>
+<body>
+<!--header-->
+<div id="archive_spine" class="abs"><a href="../index.html"><img src="../images/archive_spine.gif" alt="Archive" width="21" height="60" border="0" /></a></div>
+<div id="saycheese_spine" class="abs"><a href="index.html"><img src="../../images/say_cheese_spine.gif" alt="Say Cheese" width="17" height="60" border="0" /></a></div>
+<div id="photos_text" class="abs"><img src="images/photos_text.gif" alt="photos" width="141" height="40" border="0" /></div>
+<div id="small_yellow_blob" class="abs"><img src="../images/yellow_blob.gif" alt="blob" width="245" height="75" border="0" /></div>
+<!--text and blobs-->
+<div id="berlin_text" class="abs"><img src="../images/berlin_text.gif" alt="Berlin" width="116" height="45" border="0" /></div>
+<div id="blue_blob" class="abs"><img src="../images/blue_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="ljublijana_text" class="abs"><img src="../images/ljublijana_text.gif" alt="ljublijana" width="154" height="63" border="0" /></div>
+<div id="pink_blob" class="abs"><img src="../images/pink_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="liverpool_text" class="abs"><img src="../images/liverpool_text.gif" alt="liverpool" width="148" height="44" border="0" /></div>
+<div id="purple_blob" class="abs"><img src="../images/purple_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="ny_text" class="abs"><img src="../images/ny_text.gif" alt="ny" width="162" height="45" border="0" /></div>
+<div id="green_blob" class="abs"><img src="../images/green_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="bristol_text" class="abs"><img src="../images/bristol_text.gif" alt="bristol" width="111" height="52" border="0" /></div>
+<div id="orange_blob" class="abs"><img src="../images/orange_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="london_text" class="abs"><img src="../images/london_text.gif" alt="london" width="133" height="55" border="0" /></div>
+<div id="red_blob" class="abs"><img src="../images/red_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<div id="linz_text" class="abs"><img src="../images/linz_text.gif" alt="linz" width="101" height="47" border="0" /></div>
+<div id="yellow_blob" class="abs"><img src="../images/yellow_blob.gif" alt="blob" width="490" height="151" border="0" /></div>
+<!--thumbnails-->
+<!--berlin-->
+<div id="thumb00" class="abs"><a href="javascript:popthumb('berlin1');"><img src="images/photos/thumbs/berlin1.jpg" alt="berlin" width="50" height="35" border="0" /></a></div>
+<div id="thumb01" class="abs"><a href="javascript:popthumb('berlin2');"><img src="images/photos/thumbs/berlin2.jpg" alt="berlin" width="50" height="35" border="0" /></a></div>
+<div id="thumb02" class="abs"><a href="javascript:popthumb('berlin3');"><img src="images/photos/thumbs/berlin3.jpg" alt="berlin" width="50" height="35" border="0" /></a></div>
+<div id="thumb03" class="abs"><a href="javascript:popthumb('berlin4');"><img src="images/photos/thumbs/berlin4.jpg" alt="berlin" width="50" height="35" border="0" /></a></div>
+<div id="thumb04" class="abs"><a href="javascript:popthumb('berlin5');"><img src="images/photos/thumbs/berlin5.jpg" alt="berlin" width="50" height="35" border="0" /></a></div>
+<!--ljublijana-->
+<div id="thumb10" class="abs"><a href="javascript:popthumb('ljublijana1');"><img src="images/photos/thumbs/ljublijana1.jpg" alt="ljublijana" width="50" height="35" border="0" /></a></div>
+<div id="thumb11" class="abs"><a href="javascript:popthumb('ljublijana2');"><img src="images/photos/thumbs/ljublijana2.jpg" alt="ljublijana" width="50" height="35" border="0" /></a></div>
+<div id="thumb12" class="abs"><a href="javascript:popthumb('ljublijana3');"><img src="images/photos/thumbs/ljublijana3.jpg" alt="ljublijana" width="50" height="35" border="0" /></a></div>
+<!--liverpool-->
+<div id="thumb20" class="abs"><a href="javascript:popthumb('liverpool1');"><img src="images/photos/thumbs/liverpool1.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb21" class="abs"><a href="javascript:popthumb('liverpool2');"><img src="images/photos/thumbs/liverpool2.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb22" class="abs"><a href="javascript:popthumb('liverpool3');"><img src="images/photos/thumbs/liverpool3.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb23" class="abs"><a href="javascript:popthumb('liverpool4');"><img src="images/photos/thumbs/liverpool4.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb24" class="abs"><a href="javascript:popthumb('liverpool5');"><img src="images/photos/thumbs/liverpool5.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb25" class="abs"><a href="javascript:popthumb('liverpool6');"><img src="images/photos/thumbs/liverpool6.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb26" class="abs"><a href="javascript:popthumb('liverpool7');"><img src="images/photos/thumbs/liverpool7.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<div id="thumb27" class="abs"><a href="javascript:popthumb('liverpool8');"><img src="images/photos/thumbs/liverpool8.jpg" alt="liverpool" width="50" height="35" border="0" /></a></div>
+<!--new york-->
+<div id="thumb30" class="abs"><a href="javascript:popthumb('ny1');"><img src="images/photos/thumbs/ny1.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb31" class="abs"><a href="javascript:popthumb('ny2');"><img src="images/photos/thumbs/ny2.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb32" class="abs"><a href="javascript:popthumb('ny3');"><img src="images/photos/thumbs/ny3.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb33" class="abs"><a href="javascript:popthumb('ny4');"><img src="images/photos/thumbs/ny4.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb34" class="abs"><a href="javascript:popthumb('ny5');"><img src="images/photos/thumbs/ny5.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb35" class="abs"><a href="javascript:popthumb('ny6');"><img src="images/photos/thumbs/ny6.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<div id="thumb36" class="abs"><a href="javascript:popthumb('ny7');"><img src="images/photos/thumbs/ny7.jpg" alt="ny" width="50" height="35" border="0" /></a></div>
+<!--bristol-->
+<div id="thumb40" class="abs"><a href="javascript:popthumb('bristol1');"><img src="images/photos/thumbs/bristol1.jpg" alt="bristol" width="50" height="35" border="0" /></a></div>
+<div id="thumb41" class="abs"><a href="javascript:popthumb('bristol2');"><img src="images/photos/thumbs/bristol2.jpg" alt="bristol" width="50" height="35" border="0" /></a></div>
+<div id="thumb42" class="abs"><a href="javascript:popthumb('bristol3');"><img src="images/photos/thumbs/bristol3.jpg" alt="bristol" width="50" height="35" border="0" /></a></div>
+<div id="thumb43" class="abs"><a href="javascript:popthumb('bristol4');"><img src="images/photos/thumbs/bristol4.jpg" alt="bristol" width="50" height="35" border="0" /></a></div>
+<div id="thumb44" class="abs"><a href="javascript:popthumb('bristol5');"><img src="images/photos/thumbs/bristol5.jpg" alt="bristol" width="50" height="35" border="0" /></a></div>
+<!--london-->
+<div id="thumb50" class="abs"><a href="javascript:popthumb('london1');"><img src="images/photos/thumbs/london1.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb51" class="abs"><a href="javascript:popthumb('london2');"><img src="images/photos/thumbs/london2.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb52" class="abs"><a href="javascript:popthumb('london3');"><img src="images/photos/thumbs/london3.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb53" class="abs"><a href="javascript:popthumb('london4');"><img src="images/photos/thumbs/london4.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb54" class="abs"><a href="javascript:popthumb('london5');"><img src="images/photos/thumbs/london5.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb55" class="abs"><a href="javascript:popthumb('london6');"><img src="images/photos/thumbs/london6.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb56" class="abs"><a href="javascript:popthumb('london7');"><img src="images/photos/thumbs/london7.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb57" class="abs"><a href="javascript:popthumb('london8');"><img src="images/photos/thumbs/london8.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb58" class="abs"><a href="javascript:popthumb('london9');"><img src="images/photos/thumbs/london9.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb59" class="abs"><a href="javascript:popthumb('london10');"><img src="images/photos/thumbs/london10.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb510" class="abs"><a href="javascript:popthumb('london11');"><img src="images/photos/thumbs/london11.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb511" class="abs"><a href="javascript:popthumb('london12');"><img src="images/photos/thumbs/london12.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb512" class="abs"><a href="javascript:popthumb('london13');"><img src="images/photos/thumbs/london13.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<div id="thumb513" class="abs"><a href="javascript:popthumb('london14');"><img src="images/photos/thumbs/london14.jpg" alt="london" width="50" height="35" border="0" /></a></div>
+<!--linz-->
+<div id="thumb60" class="abs"><a href="javascript:popthumb('linz1');"><img src="images/photos/thumbs/linz1.jpg" alt="linz" width="50" height="35" border="0" /></a></div>
+<div id="thumb61" class="abs"><a href="javascript:popthumb('linz2');"><img src="images/photos/thumbs/linz2.jpg" alt="linz" width="50" height="35" border="0" /></a></div>
+<div id="thumb62" class="abs"><a href="javascript:popthumb('linz3');"><img src="images/photos/thumbs/linz3.jpg" alt="linz" width="50" height="35" border="0" /></a></div>
+</body>
+</html>

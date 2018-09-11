@@ -1,0 +1,20 @@
+/*
+7 acts of love therapy session stylesheet
+*/
+body {
+  font: 11px verdana,arial,helvetica,sans-serif;
+  background-color:#fff;
+  color:#999;
+  margin:5px;
+}
+.entry {
+  font-style:italic;
+  color:#666;
+}
+.entry_start {
+  font-weight:bold;
+  color:#333
+}
+.entry_body {
+  text-align:justify;
+}

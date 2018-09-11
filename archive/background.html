@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>7 acts of love: archive</title>
+<style type="text/css">
+<!--
+body {
+  background-image:url(images/background_bg.jpg);
+  background-repeat:repeat-x;
+  background-color:#82b6e8;
+}
+-->
+</style>
+
+<script language="JavaScript" type="text/javascript" src="../js/x.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/sevenacts.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var _x = 0;
+var _y = 0;
+function showLabel(which, show)
+{
+  return;
+}
+window.onload = function()
+{
+    _x += (xClientWidth() >= 500) ? (xClientWidth() - 500)/2: 0;
+    _y += (xClientHeight() >= 420) ? (xClientHeight() - 420)/2: 0;
+    xMoveTo('table', _x + 81, _y + 5);
+    xZIndex('table', 2);
+    xShow('table');
+    xMoveTo('wallpaper', _x, _y);
+    xZIndex('wallpaper', 1);
+    xShow('wallpaper');
+    xMoveTo('blob', _x + 28, _y + 269);
+    xZIndex('blob', 1);
+    xShow('blob');
+    xMoveTo('background_spines', _x + 216, _y + 84);
+    xZIndex('background_spines', 10);
+    xShow('background_spines');
+    xMoveTo('background_photo', _x + 117, _y + 298);
+    xZIndex('background_photo', 3);
+    xShow('background_photo');
+    xMoveTo('background_text', _x + 159, _y + 239);
+    xZIndex('background_text', 4);
+    xShow('background_text');
+    xMoveTo('archive_spine', _x + 465, _y + 18);
+    xZIndex('archive_spine', 10);
+    xShow('archive_spine');
+    xMoveTo('home_spine', _x + 445, _y + 18);
+    xZIndex('home_spine', 10);
+    xShow('home_spine');
+    xAddEventListener(document, "mousemove", move, false);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../css/sevenacts.css" type="text/css" />
+</head>
+<body>
+<div id="table" class="abs"><img src="images/background_table.gif" alt="" width="426" height="392" border="0" /></div>
+<div id="blob" class="abs"><img src="images/background_halo.gif" name="blobimage" id="blobimage" alt="" width="490" height="151" border="0" /></div>
+<div id="background_text" class="abs"><img src="images/background_text.gif" alt="BACKGROUND" width="219" height="61" border="0" /></div>
+<div id="background_photo" class="abs"><img src="images/marcus_photobg.gif" alt="" width="306" height="127" border="0" /></div>
+<div id="background_spines" class="abs">
+<table summary="book spines" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td valign="top"><a href="javascript:popup('self_portraits.html',920,400,0,100,'','background_images');"><img src="images/self_portraits_spine.gif" alt="" width="17" height="60" border="0" /></a></td>
+<td valign="top"><a href="javascript:popup('interventions.html',920,400,0,100,'','background_images');"><img src="images/interventions_spine.gif" alt="" width="19" height="60" border="0" /></a></td>
+<td valign="top"><a href="javascript:popup('other_images.html',920,400,0,100,'','background_images');"><img src="images/other_images_spine.gif" alt="" width="16" height="60" border="0" /></a></td>
+<td valign="top"><a href="javascript:popup('background_text.html',800,500,0,0,'menubar,scrollbars','saycheese_text');"><img src="images/background_text_spine.gif" alt="" width="21" height="60" border="0" /></a></td>
+</tr>
+</table>
+</div>
+<div id="archive_spine" class="abs"><a href="index.html"><img src="images/archive_spine.gif" alt="Back to the archive" width="20" height="60" border="0" /></a></div>
+<div id="home_spine" class="abs"><a href="../index.html"><img src="images/home_spine.gif" alt="Back to the Home Page" width="20" height="60" border="0" /></a></div>
+</body>
+</html>

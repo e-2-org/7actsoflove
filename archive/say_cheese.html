@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>7 acts of love: archive: say cheese</title>
+<script language="JavaScript" type="text/javascript" src="../js/x.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/sevenacts.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+var _x = 0;
+var _y = 0;
+var pinkblob = new Image(490, 151);
+pinkblob.src = 'images/pink_blob.gif';
+var otherblobs=new Object();
+otherblobs.text = new Image(490, 151);
+otherblobs.text.src = 'images/orange_blob.gif';
+otherblobs.photos = new Image(490, 151);
+otherblobs.photos.src = 'images/blue_blob.gif';
+otherblobs.diagrams = new Image(490, 151);
+otherblobs.diagrams.src = 'images/green_blob.gif';
+otherblobs.letters = new Image(490, 151);
+otherblobs.letters.src = 'images/purple_blob.gif';
+otherblobs.replies = new Image(490, 151);
+otherblobs.replies.src = 'images/yellow_blob.gif';
+function showIt(what, showit)
+{
+    var targetImg = (document.layers) ? document.layers['blob'].document.images['blobimage'] : document.images['blobimage'];
+    if (showit) {
+        xHide('marcus_drawing');
+        xHide('archive_text');
+        xShow(what+'_photo');
+        xShow(what+'_text');
+        targetImg.src = otherblobs[what].src;
+    } else {
+        xHide(what+'_photo');
+        xHide(what+'_text');
+        xShow('marcus_drawing');
+        xShow('archive_text');
+        targetImg.src = pinkblob.src;
+    }
+}
+window.onload = function()
+{
+    _x += (xClientWidth() >= 500) ? (xClientWidth() - 500)/2: 0;
+    _y += (xClientHeight() >= 420) ? (xClientHeight() - 420)/2: 0;
+    xMoveTo('table', _x + 81, _y + 5);
+    xZIndex('table', 2);
+    xShow('table');
+    xMoveTo('wallpaper', _x, _y);
+    xZIndex('wallpaper', 1);
+    xShow('wallpaper');
+    xMoveTo('blob', _x + 28, _y + 269);
+    xZIndex('blob', 1);
+    xShow('blob');
+    xMoveTo('saycheese_photo', _x + 167, _y + 301);
+    xZIndex('saycheese_photo', 3);
+    xShow('saycheese_photo');
+    xMoveTo('saycheese_text', _x + 139, _y + 249);
+    xZIndex('saycheese_text', 4);
+    xShow('saycheese_text');
+    xMoveTo('saycheese_spines', _x + 196, _y + 86);
+    xZIndex('saycheese_spines', 10);
+    xShow('saycheese_spines');
+    xMoveTo('text_photo', _x + 117, _y + 308);
+    xZIndex('text_photo', 3);
+    xMoveTo('text_text', _x + 200, _y + 249);
+    xZIndex('text_text', 4);
+    xMoveTo('photos_photo', _x + 117, _y + 308);
+    xZIndex('photos_photo', 3);
+    xMoveTo('photos_text', _x + 200, _y + 249);
+    xZIndex('photos_text', 4);
+    xMoveTo('diagrams_photo', _x + 117, _y + 308);
+    xZIndex('diagrams_photo', 3);
+    xMoveTo('diagrams_text', _x + 200, _y + 249);
+    xZIndex('diagrams_text', 4);
+    xMoveTo('letters_photo', _x + 117, _y + 308);
+    xZIndex('letters_photo', 3);
+    xMoveTo('letters_text', _x + 200, _y + 249);
+    xZIndex('letters_text', 4);
+    xMoveTo('replies_photo', _x + 117, _y + 308);
+    xZIndex('replies_photo', 3);
+    xMoveTo('replies_text', _x + 200, _y + 249);
+    xZIndex('replies_text', 4);
+    xMoveTo('archive_spine', _x + 465, _y + 18);
+    xZIndex('archive_spine', 10);
+    xShow('archive_spine');
+    xMoveTo('home_spine', _x + 445, _y + 18);
+    xZIndex('home_spine', 10);
+    xShow('home_spine');
+    xAddEventListener(document, "mousemove", move, false);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../css/sevenacts.css" type="text/css" />
+</head>
+<body>
+<div id="table" class="abs"><img src="images/background_table.gif" alt="" width="426" height="392" border="0" /></div>
+<div id="wallpaper" class="abs"><img src="images/wallpaper.gif" alt="" width="111" height="201" border="0" /></div>
+<div id="blob" class="abs"><img src="images/pink_blob.gif" name="blobimage" id="blobimage" alt="" width="490" height="151" border="0" /></div>
+<div id="saycheese_spines" class="abs">
+<table summary="book spines" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td valign="top"><a href="text.html" onmouseover="showIt('text',true);" onmouseout="showIt('text',tre);"><img src="images/text_spine.gif" alt="text" width="20" height="60" border="0" /></a></td>
+<td valign="top"><a href="photos.html" onmouseover="showIt('photos',true);" onmouseout="showLabel('', false);"><img src="images/photos_spine.gif" alt="photos" width="19" height="60" border="0" /></a></td>
+<td valign="top"><a href="diagrams.html" onmouseover="showIt('diagrams',true);" onmouseout="showLabel('', false);"><img src="images/diagrams_spine.gif" alt="diagrams" width="16" height="60" border="0" /></a></td>
+<td valign="top"><a href="letters.html" onmouseover="showIt('letters',true);" onmouseout="showLabel('', false);"><img src="images/letters_spine.gif" alt="letters" width="16" height="60" border="0" /></a></td>
+<td valign="top"><a href="replies.html" onmouseover="showIt('replies',true);" onmouseout="showLabel('', false);"><img src="images/replies_spine.gif" alt="replies" width="16" height="60" border="0" /></a></td>
+</tr>
+</table>
+</div>
+<div id="archive_spine" class="abs"><a href="index.html"><img src="images/archive_spine.gif" alt="Back to the archive" width="20" height="60" border="0" /></a></div>
+<div id="home_spine" class="abs"><a href="../index.html"><img src="images/home_spine.gif" alt="Back to the Home Page" width="20" height="60" border="0" /></a></div>
+<div id="saycheese_photo" class="abs"><img src="images/saycheese_photo.gif" alt="" width="214" height="111" border="0" /></div>
+<div id="saycheese_text" class="abs"><img src="images/saycheese_text.gif" alt="Say Cheese" width="274" height="91" border="0" /></div>
+<div id="text_text" class="abs"><img src="images/text_text.gif" alt="text" width="102" height="43" border="0" /></div>
+<div id="text_photo" class="abs"><img src="images/text_photo.gif" alt="text" width="300" height="99" border="0" /></div>
+<div id="photos_text" class="abs"><img src="images/photos_text.gif" alt="photos" width="102" height="35" border="0" /></div>
+<div id="photos_photo" class="abs"><img src="images/photos_photo.gif" alt="" width="296" height="120" border="0" /></div>
+<div id="diagrams_text" class="abs"><img src="images/diagrams_text.gif" alt="diagrams" width="102" height="35" border="0" /></div>
+<div id="diagrams_photo" class="abs"><img src="images/diagrams_photo.gif" alt="" width="296" height="120" border="0" /></div>
+<div id="letters_text" class="abs"><img src="images/letters_text.gif" alt="letters" width="306" height="94" border="0" /></div>
+<div id="letters_photo" class="abs"><img src="images/letters_photo.gif" alt="" width="296" height="103" border="0" /></div>
+<div id="replies_text" class="abs"><img src="images/replies_text.gif" alt="replies" width="306" height="94" border="0" /></div>
+<div id="replies_photo" class="abs"><img src="images/replies_photo.gif" alt="" width="296" height="120" border="0" /></div>
+</body>
+</html>
