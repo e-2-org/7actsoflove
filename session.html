@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>god-therapist session - 7 acts of love</title>
+<link rel="stylesheet" href="css/therapy.css">
+</head>
+<body>
+
+<!-- step 1: choose a bedroom and a name (was bedroom.php) -->
+<section class="step" id="step-bedroom">
+	<h1><img src="images/choose_a_bedroom.gif" alt="Choose a bedroom" width="245" height="76"></h1>
+	<form id="bedroom-form" novalidate>
+		<div class="beds" role="group" aria-label="Bedrooms"></div>
+		<div class="nick">
+			<label for="nick" class="visually-hidden">Your name</label>
+			<input type="text" id="nick" maxlength="40" placeholder="Type a name in here" autocomplete="nickname">
+			<button type="submit" class="img-button"><img src="images/next.gif" alt="next" width="88" height="41"></button>
+			<p class="error" id="bedroom-error" role="alert"></p>
+		</div>
+	</form>
+</section>
+
+<!-- step 2: choose where to sit (was bedroom.php, second visit) -->
+<section class="step" id="step-position" hidden>
+	<header class="step-head">
+		<h1><img src="images/where_to_sit.gif" alt="Where would you like to sit?" width="245" height="76"></h1>
+		<button type="button" class="img-button" id="enter"><img src="images/enter.gif" alt="enter" width="88" height="41"></button>
+	</header>
+	<p class="error" id="position-error" role="alert"></p>
+	<div class="position">
+		<div class="sticks" role="group" aria-label="Places to sit"></div>
+		<div class="room" id="position-room"></div>
+	</div>
+</section>
+
+<!-- step 3: the session (was therapist.php + session.php + sounds.php) -->
+<section class="step" id="step-session" hidden>
+	<div class="session">
+		<div class="chat">
+			<div class="log" id="log" role="log" aria-live="polite"></div>
+			<form id="session-form" autocomplete="off">
+				<label for="message" class="visually-hidden">Your response</label>
+				<input type="text" id="message" class="input-box">
+				<div class="chat-buttons">
+					<button type="submit" class="img-button"><img src="images/send.gif" alt="send" width="88" height="41"></button>
+					<button type="button" class="img-button" id="exit"><img src="images/exit.gif" alt="exit" width="65" height="41"></button>
+				</div>
+			</form>
+		</div>
+		<div class="room" id="session-room"></div>
+	</div>
+</section>
+
+<script src="js/therapy.js"></script>
+</body>
+</html>
