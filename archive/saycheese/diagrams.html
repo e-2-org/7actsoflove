@@ -1,82 +1,20 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
-<head>
-<title>Say Cheese: diagrams</title>
-<style type="text/css">
-<!--
-body {
-  margin:0px;
-  padding:0px;
-  border:0px;
-}
-img {
-  margin:0px;
-  padding:0px;
-  border:0px;
-}
-div.controls {
-  font:12px "Courier New",Courier,monospace;
-  color:#333;
-  text-decoration:none;
-  height:20px;
-  padding:0px 5px 10px 0px;
-  position:absolute;
-  visibility:hidden;
-}
-div.pic {
-  position:absolute;
-  left:5px;
-  top:35px;
-}
-a.menu, a.menu:link, a.menu:visited, a.menu:active {
-  font:12px "Courier New",Courier,monospace;
-  text-decoration:none;
-  display:block;
-  padding:3px;
-  color:#999;
-  background-color:#fff;
-}
-.active, a.menu:hover, a.menu:visited:hover {
-  font:12px "Courier New",Courier,monospace;
-  text-decoration:none;
-  display:block;
-  padding:3px;
-  color:#000;
-  background-color:#ccc;
-}
--->
-</style>
-<script language="JavaScript" type="text/javascript" src="../../js/x.js"></script>
-</head>
-<body>
-<script language="JavaScript" type="text/javascript">
-<!--
-window.onload=function(){
-  xMoveTo('controls',xClientWidth()-xWidth('controls'),0);
-  xShow('controls');
-}
-var diags = 11;
-var diag_id = parseInt(location.search.substring(3)) || 1;
-var nextlink = ["",""];
-document.write('<div class="controls" id="controls"><table summary="navigation" cellpadding="3" cellspacing="0" border="0"><tr>');
-if (diag_id > 1) {
-    document.write('<td valign="top" height="20"><a href="diagrams.html?d='+(diag_id - 1)+'" class="menu">previous</a></td>');
-}
-for (var i = 1; i <= diags; i++) {
-    if (i == diag_id) {
-        document.write('<td valign="top" height="20"><span class="active">'+i+'</span></td>');
-    }else{
-        document.write('<td valign="top"><a href="diagrams.html?d='+i+'" class="menu">'+i+'</a></td>');
-    }
-}
-if (diag_id < diags) {
-    nextlink = ['<a href="diagrams.html?d='+(diag_id + 1)+'">','</a>'];
-    document.write('<td valign="top" height="20"><a href="diagrams.html?d='+(diag_id + 1)+'" class="menu">next</a></td>');
-}
-document.write('</tr></table></div>');
-document.write('<div class="pic">'+nextlink[0]+'<img src="images/diagram'+diag_id+'.gif" alt="saycheese bed diagrams" border="0" />'+nextlink[1]+'</div>');
-//-->
-</script>
-</body>
-</html>
+---
+title: "Say Cheese: diagrams"
+body_class: in-window letters diagrams
+# the drawings are archive/saycheese/images/diagram1.gif ... diagram<count>.gif, 600x423
+count: 11
+---
+<div class="tabs">
+	<nav class="tab-nav" aria-label="Diagrams">
+		<a href="#" data-step="-1">previous</a>
+{%- for n in (1..page.count) %}
+		<a href="#d{{ n }}">{{ n }}</a>
+{%- endfor %}
+		<a href="#" data-step="1">next</a>
+	</nav>
+{%- for n in (1..page.count) %}
+	<figure class="tab-panel" id="d{{ n }}">
+		{% if n < page.count %}<a href="#d{{ n | plus: 1 }}">{% endif %}<img src="{{ n | prepend: 'archive/saycheese/images/diagram' | append: '.gif' | relative_url }}" width="600" height="423" alt="Say Cheese bed diagram {{ n }}">{% if n < page.count %}</a>{% endif %}
+	</figure>
+{%- endfor %}
+</div>

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{%- comment -%}
+A bookshelf page (the archive, Say Cheese and background pages). In the front matter:
+  scenery  pictures that are always shown
+  idle     pictures shown when no spine is pointed at
+  spines   x, y and the books on the shelf, each with href, src, w, h, label,
+           optionally window/name/title to open in a window, and show: the
+           pictures that replace "idle" while the spine is pointed at
+  links    other spines placed on the stage (back to the archive, home)
+{%- endcomment -%}
+<main class="stage" data-fit data-hover-stage style="width:{{ page.stage[0] }}px;height:{{ page.stage[1] }}px">
+{%- for item in page.scenery %}
+	{% include place.html item=item %}
+{%- endfor %}
+	<div class="group" data-group="">
+{%- for item in page.idle %}
+		{% include place.html item=item %}
+{%- endfor %}
+	</div>
+{%- for spine in page.spines.items %}{% if spine.show %}
+	<div class="group" data-group="{{ forloop.index }}" hidden>
+{%- for item in spine.show %}
+		{% include place.html item=item %}
+{%- endfor %}
+	</div>
+{%- endif %}{% endfor %}
+	<nav class="spines" aria-label="{{ page.title }}" style="left:{{ page.spines.x }}px;top:{{ page.spines.y }}px">
+{%- for spine in page.spines.items %}
+		<a href="{{ spine.href | relative_url }}"{% if spine.show %} data-show="{{ forloop.index }}"{% endif %}{% include window-link.html item=spine %}><img src="{{ spine.src | relative_url }}" width="{{ spine.w }}" height="{{ spine.h }}" alt="{{ spine.label }}"></a>
+{%- endfor %}
+	</nav>
+{%- for link in page.links %}
+	<a class="place spine" href="{{ link.href | relative_url }}" style="left:{{ link.x }}px;top:{{ link.y }}px"><img src="{{ link.src | relative_url }}" width="{{ link.w }}" height="{{ link.h }}" alt="{{ link.label }}"></a>
+{%- endfor %}
+</main>
+{{ content }}

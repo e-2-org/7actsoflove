@@ -1,117 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>7 acts of love: archive</title>
-<script language="JavaScript" type="text/javascript" src="../js/x.js"></script>
-<script language="JavaScript" type="text/javascript" src="../js/sevenacts.js"></script>
-<script language="JavaScript" type="text/javascript">
-<!--
-var _x = 0;
-var _y = 0;
-var blueblob = new Image(490, 151);
-blueblob.src = 'images/blue_blob.gif';
-var otherblobs=new Object();
-otherblobs.saycheese = new Image(490, 151);
-otherblobs.saycheese.src = 'images/pink_blob.gif';
-otherblobs.background = new Image(490, 151);
-otherblobs.background.src = 'images/background_halo.gif';
-otherblobs.bibliography = new Image(490, 151);
-otherblobs.bibliography.src = 'images/green_blob.gif';
-otherblobs.video = new Image(490, 151);
-otherblobs.video.src = 'images/yellow_blob.gif';
-function showIt(what, showit)
-{
-    var targetImg = (document.layers) ? document.layers['blob'].document.images['blobimage'] : document.images['blobimage'];
-    if (showit) {
-        xHide('marcus_drawing');
-        xHide('archive_text');
-        xShow(what+'_photo');
-        xShow(what+'_text');
-        targetImg.src = otherblobs[what].src;
-    } else {
-        xHide(what+'_photo');
-        xHide(what+'_text');
-        xShow('marcus_drawing');
-        xShow('archive_text');
-        targetImg.src = blueblob.src;
-    }
-}
-function showLabel(which, show)
-{
-    return;
-}
-window.onload = function()
-{
-    _x += (xClientWidth() >= 500) ? (xClientWidth() - 500)/2: 0;
-    _y += (xClientHeight() >= 420) ? (xClientHeight() - 420)/2: 0;
-    xMoveTo('table', _x + 81, _y + 5);
-    xZIndex('table', 2);
-    xShow('table');
-    xMoveTo('wallpaper', _x, _y);
-    xZIndex('wallpaper', 1);
-    xShow('wallpaper');
-    xMoveTo('blob', _x + 28, _y + 269);
-    xZIndex('blob', 1);
-    xShow('blob');
-    xMoveTo('marcus_drawing', _x + 188,_y + 221);
-    xZIndex('marcus_drawing', 3);
-    xShow('marcus_drawing');
-    xMoveTo('archive_text', _x + 156, _y + 309);
-    xZIndex('archive_text', 4);
-    xShow('archive_text');
-    xMoveTo('archive_spines', _x + 214, _y + 84);
-    xZIndex('archive_spines', 10);
-    xShow('archive_spines');
-    xMoveTo('saycheese_photo', _x + 167, _y + 301);
-    xZIndex('saycheese_photo', 3);
-    xMoveTo('saycheese_text', _x + 139, _y + 249);
-    xZIndex('saycheese_text', 4);
-    xMoveTo('background_photo', _x + 117, _y + 308);
-    xZIndex('background_photo', 3);
-    xMoveTo('background_text', _x + 159, _y + 249);
-    xZIndex('background_text', 4);
-    xMoveTo('bibliography_photo', _x + 117, _y + 308);
-    xZIndex('bibliography_photo', 3);
-    xMoveTo('bibliography_text', _x + 159, _y + 249);
-    xZIndex('bibliography_text', 4);
-    xMoveTo('video_photo', _x + 117, _y + 308);
-    xZIndex('video_photo', 3);
-    xMoveTo('video_text', _x + 200, _y + 249);
-    xZIndex('video_text', 4);
-    xMoveTo('home_spine', _x + 445, _y + 18);
-    xZIndex('home_spine', 10);
-    xShow('home_spine');
-    xAddEventListener(document, "mousemove", move, false);
-}
-//-->
-</script>
-<link rel="stylesheet" href="../css/sevenacts.css" type="text/css" />
-</head>
-<body>
-<div id="table" class="abs"><img src="images/background_table.gif" alt="" width="426" height="392" border="0" /></div>
-<div id="wallpaper" class="abs"><img src="images/wallpaper.gif" alt="" width="111" height="201" border="0" /></div>
-<div id="blob" class="abs"><img src="images/blue_blob.gif" name="blobimage" id="blobimage" alt="" width="490" height="151" border="0" /></div>
-<div id="archive_text" class="abs"><img src="images/archive_text.gif" alt="ARCHIVE" width="217" height="35" border="0" /></div>
-<div id="marcus_drawing" class="abs"><img src="images/marcus_drawing.gif" alt="" width="219" height="197" border="0" /></div>
-<div id="archive_spines" class="abs">
-<table summary="book spines" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td valign="top"><a href="saycheese/index.html" onmouseover="showIt('saycheese',true);" onmouseout="showIt('saycheese',false);"><img src="images/say_cheese_spine.gif" alt="" width="17" height="60" border="0" /></a></td>
-<td valign="top"><a href="javascript:popup('../video/player.html',340,300,100,100);" onmouseover="showIt('video',true);" onmouseout="showIt('video',false);"><img src="images/videos_spine.gif" alt="" width="19" height="60" border="0" /></a></td>
-<td valign="top"><a href="background.html" onmouseover="showIt('background',true);" onmouseout="showIt('background',false);"><img src="images/background_spine.gif" alt="" width="16" height="60" border="0" /></a></td>
-<td valign="top"><a href="bibliography.html" onmouseover="showIt('bibliography',true);" onmouseout="showIt('bibliography',false);"><img src="images/bibliography_spine.gif" alt="" width="21" height="60" border="0" /></a></td>
-</tr>
-</table>
-</div>
-<div id="home_spine" class="abs"><a href="../index.html"><img src="images/home_spine.gif" alt="Back to the Home Page" width="20" height="60" border="0" /></a></div>
-<div id="saycheese_photo" class="abs"><img src="images/saycheese_photo.gif" alt="" width="214" height="111" border="0" /></div>
-<div id="saycheese_text" class="abs"><img src="images/saycheese_text.gif" alt="Say Cheese" width="274" height="91" border="0" /></div>
-<div id="background_text" class="abs"><img src="images/background_text.gif" alt="BACKGROUND" width="219" height="61" border="0" /></div>
-<div id="background_photo" class="abs"><img src="images/marcus_photobg.gif" alt="" width="306" height="127" border="0" /></div>
-<div id="bibliography_text" class="abs"><img src="images/bibliography_text.gif" alt="BIBLIOGRAPHY" width="192" height="67" border="0" /></div>
-<div id="bibliography_photo" class="abs"><img src="images/bibliography_photo.gif" alt="" width="305" height="101" border="0" /></div>
-<div id="video_text" class="abs"><img src="images/video_text.gif" alt="VIDEO" width="102" height="35" border="0" /></div>
-<div id="video_photo" class="abs"><img src="images/video_photo.gif" alt="" width="296" height="120" border="0" /></div>
-</body>
-</html>
+---
+layout: shelf
+title: "7 acts of love: archive"
+body_class: shelf
+stage: [500, 420]
+scenery:
+  - { src: archive/images/wallpaper.gif, w: 111, h: 201, x: 0, y: 0, z: 1 }
+  - { src: archive/images/background_table.gif, w: 426, h: 392, x: 81, y: 5, z: 2 }
+idle:
+  - { src: archive/images/blue_blob.gif, w: 490, h: 151, x: 28, y: 269, z: 1 }
+  - { src: archive/images/marcus_drawing.gif, w: 219, h: 197, x: 188, y: 221, z: 3 }
+  - { src: archive/images/archive_text.gif, w: 217, h: 35, x: 156, y: 309, z: 4, alt: ARCHIVE }
+spines:
+  x: 214
+  y: 84
+  items:
+    - href: archive/saycheese/
+      src: archive/images/say_cheese_spine.gif
+      w: 17
+      h: 60
+      label: Say Cheese
+      show:
+        - { src: archive/images/pink_blob.gif, w: 490, h: 151, x: 28, y: 269, z: 1 }
+        - { src: archive/images/saycheese_photo.gif, w: 214, h: 111, x: 167, y: 301, z: 3 }
+        - { src: archive/images/saycheese_text.gif, w: 274, h: 91, x: 139, y: 249, z: 4, alt: Say Cheese }
+    - href: video/
+      src: archive/images/videos_spine.gif
+      w: 19
+      h: 60
+      label: video
+      window: 340x300
+      title: video
+      show:
+        - { src: archive/images/yellow_blob.gif, w: 490, h: 151, x: 28, y: 269, z: 1 }
+        - { src: archive/images/video_photo.gif, w: 296, h: 120, x: 117, y: 308, z: 3 }
+        - { src: archive/images/video_text.gif, w: 102, h: 35, x: 200, y: 249, z: 4, alt: VIDEO }
+    - href: archive/background.html
+      src: archive/images/background_spine.gif
+      w: 16
+      h: 60
+      label: background
+      show:
+        - { src: archive/images/background_halo.gif, w: 490, h: 151, x: 28, y: 269, z: 1 }
+        - { src: archive/images/marcus_photobg.gif, w: 306, h: 127, x: 117, y: 308, z: 3 }
+        - { src: archive/images/background_text.gif, w: 219, h: 61, x: 159, y: 249, z: 4, alt: BACKGROUND }
+    - href: archive/bibliography.html
+      src: archive/images/bibliography_spine.gif
+      w: 21
+      h: 60
+      label: bibliography
+      show:
+        - { src: archive/images/green_blob.gif, w: 490, h: 151, x: 28, y: 269, z: 1 }
+        - { src: archive/images/bibliography_photo.gif, w: 305, h: 101, x: 117, y: 308, z: 3 }
+        - { src: archive/images/bibliography_text.gif, w: 192, h: 67, x: 159, y: 249, z: 4, alt: BIBLIOGRAPHY }
+links:
+  - { href: index.html, src: archive/images/home_spine.gif, w: 20, h: 60, x: 445, y: 18, label: Back to the home page }
+---

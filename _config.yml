@@ -1,0 +1,47 @@
+# 7 acts of love (Oreet Ashery, 2004) - Jekyll site for GitHub Pages
+#
+# Pages:
+#   index.html                 home page
+#   session.html               god-therapist session (js/therapy.js, audio/)
+#   archive/                   the archive "bookshelves" and the pages that open in windows
+#   video/                     the video player
+#
+# Content that is easier to edit as one file per item:
+#   _letters/                  Say Cheese letters to participants (archive/saycheese/letters.html)
+#   _replies/                  Say Cheese replies from participants (archive/saycheese/replies.html)
+#   _saycheese_text/           sections of the Say Cheese text (archive/saycheese/text.html)
+#   _data/bibliography.yml     press cuttings on the bibliography page
+#   _data/photos.yml           Say Cheese photos, grouped by city
+#   _data/videos.yml           videos in the player
+#
+# Bookshelf pages (layout: shelf) describe their pictures and spines in their front matter.
+# A link with data-window="WIDTHxHEIGHT" opens in a window over the page (these were popups).
+
+title: 7 acts of love
+description: >-
+  Say Cheese is artist Oreet Ashery's series of experimental, process based
+  interactions with her alter-ego Marcus Fisher that took place in 7 bedrooms
+  across the world, with a permanent interactive sound work made for the web.
+url: https://e-2-org.github.io
+baseurl: "/7actsoflove"
+
+collections:
+  letters:
+    output: false
+  replies:
+    output: false
+  saycheese_text:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .vendor
+  - .bundle

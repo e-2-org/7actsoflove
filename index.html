@@ -1,134 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>7 acts of love</title>
-<style type="text/css">
-.title {
-  font:bold 18px Geneva,Arial,Helvetica,sans-serif;
-  color:#333;
-}
-.hilite {
-  font:bold 18px Geneva,Arial,Helvetica,sans-serif;
-  color:#000;
-  background-color:#fcf;
-}
-#blurb0 {
-  width:270px;
-  font:12pt Geneva,Arial,Helvetica,sans-serif;
-  color:#666;
-  z-index:200;
-}
-#blurb1 {
-  width:270px;
-  font:12pt Geneva,Arial,Helvetica,sans-serif;
-  color:#666;
-}
-#blurb2 {
-  width:270px;
-  font:12pt Geneva,Arial,Helvetica,sans-serif;
-  color:#666;
-}
-#blurb3 {
-  width:270px;
-  font:12pt Geneva,Arial,Helvetica,sans-serif;
-  color:#666;
-}
-#drawing {
-  background-image:url(images/drawing_bg.gif);
-  background-repeat:repeat-y;
-}
-#menu {
-  width:270px;
-  font:bold 15px Geneva,Arial,Helvetica,sans-serif;
-  color:#999;
-  background-color:#fff;
-}
-a.menu:link, a.menu:active, a.menu:visited {
-  font:bold 15px Geneva,Arial,Helvetica,sans-serif;
-  color:#999;
-  background-color:#fff;
-  text-decoration:none;
-}
-a.menu:hover, a.menu:visited:hover {
-  font:bold 15px Geneva,Arial,Helvetica,sans-serif;
-  color:#999;
-  background-color:#fcf;
-  text-decoration:none;
-}
-
-</style>
-<script language="JavaScript" type="text/javascript" src="js/x.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/home.js"></script>
-<script language="JavaScript" type="text/javascript">
-<!--
-var _x = 0;
-var _y = 0;
-window.onload = function()
-{
-    _x += (xClientWidth() >= 800) ? (xClientWidth() - 800)/2: 0;
-    xMoveTo('drawing', _x + 275, 0);
-    xZIndex('drawing', 2);
-    xShow('drawing');
-    xMoveTo('blob1', _x - 280, 440);
-    xZIndex('blob1', 1);
-    xShow('blob1');
-    xMoveTo('blob2', _x + 670, 430);
-    xZIndex('blob2', 1);
-    xShow('blob2');
-    xMoveTo('leaves_top', _x + 50, 45);
-    xZIndex('leaves_top', 11);
-    xShow('leaves_top');
-    xMoveTo('leaves_bottom', _x + 50, 425);
-    xZIndex('leaves_bottom', 11);
-    //xShow('leaves_bottom');
-    for(i=0;i<4;i++){
-      xMoveTo('blurb'+i, _x, 320);
-      xZIndex('blurb'+i, 20);
-    }
-    xShow('blurb0');
-    xMoveTo('menu', _x + 530, 225);
-    xZIndex('menu', 10);
-    xShow('menu');
-    xAddEventListener(document, "mousemove", move, false);
-}
-function showblurb(idx){
-    for(i=0; i<4; i++){
-        if(idx == i) {
-            xShow('blurb'+i);
-        } else {
-            xHide('blurb'+i);
-        }
-    }
-}
-  
-//-->
-</script>
-<link rel="stylesheet" href="css/home.css" type="text/css" />
-</head>
-<body>
-<div id="drawing" class="abs"><img src="images/oreet_drawing.gif" alt="" width="249" height="600" border="0" /></div>
-<div id="blob1" class="abs"><img src="images/pink_blob.gif" name="blobimage1" id="blobimage1" alt="" width="490" height="151" border="0" /></div>
-<div id="blob2" class="abs"><img src="images/pink_blob.gif" name="blobimage2" id="blobimage2" alt="" width="490" height="151" border="0" /></div>
-<div id="leaves_top" class="abs"><img src="images/leaves_top.gif" alt="" width="145" height="280" border="0" /></div>
-<div id="leaves_bottom" class="abs"><img src="images/leaves_bottom.gif" alt="" width="92" height="104" border="0" /></div>
-<div id="blurb0" class="abs">
-<p><span class="title">7 acts of love</span><br />Say Cheese is artist Oreet Ashery's series of experimental, process based interactions with her alter-ego Marcus Fisher that took place in 7 bedrooms across the world. There is extensive documentation of Say Cheese in the Archive section. Ashery has also created a new piece especially for the web, a permanent interactive sound work that can be found in the &lsquo;god-therapist session&rsquo; section.</p>
-</div>
-<div id="blurb3" class="abs">
-<p><span class="title">archive</span><br />Background material about the artist and the project.</p>
-</div>
-<div id="blurb1" class="abs">
-<p><span class="title">god-therapist session</span><br />Requires JavaScript to be enabled. Please ensure that your speakers are turned ON.</p>
-</div>
-<div id="blurb2" class="abs">
-<p><span class="title">Live residency</span><br />A live residency took place in April 2004 where participants talked live to Marcus Fisher about love and loss. </p>
-</p>
-</div>
-<div id="menu" class="abs">
-<p><a href="archive/index.html" class="menu" onmouseover="showblurb(3);" onmouseout="showblurb(0);">archive</a></p>
-<p><a href="session.html" class="menu" onmouseover="showblurb(1);" onmouseout="showblurb(0);">god-therapist session</a><br /> Please ensure that your speakers are turned <span class="hilite">ON.</span></p>
-<p><a href="#" class="menu" onmouseover="showblurb(2);" onmouseout="showblurb(0);">Live residency</a></p>
-</div>
-</body>
-</html>
+---
+title: 7 acts of love
+body_class: home
+# what the text on the left says while each menu item is pointed at; the first is shown otherwise
+blurbs:
+  - title: 7 acts of love
+    text: Say Cheese is artist Oreet Ashery's series of experimental, process based interactions with her alter-ego Marcus Fisher that took place in 7 bedrooms across the world. There is extensive documentation of Say Cheese in the Archive section. Ashery has also created a new piece especially for the web, a permanent interactive sound work that can be found in the &lsquo;god-therapist session&rsquo; section.
+  - title: god-therapist session
+    text: Requires JavaScript to be enabled. Please ensure that your speakers are turned ON.
+  - title: Live residency
+    text: A live residency took place in April 2004 where participants talked live to Marcus Fisher about love and loss.
+  - title: archive
+    text: Background material about the artist and the project.
+---
+<main class="stage" data-hover-stage style="width:800px;height:600px">
+	<div class="place drawing" style="left:275px;top:0;z-index:2"><img src="{{ 'images/oreet_drawing.gif' | relative_url }}" width="249" height="600" alt=""></div>
+	<img class="place blob" src="{{ 'images/pink_blob.gif' | relative_url }}" width="490" height="151" alt="" style="left:-280px;top:440px;z-index:1">
+	<img class="place blob" src="{{ 'images/pink_blob.gif' | relative_url }}" width="490" height="151" alt="" style="left:670px;top:430px;z-index:1">
+	<img class="place leaves" src="{{ 'images/leaves_top.gif' | relative_url }}" width="145" height="280" alt="" style="left:50px;top:45px;z-index:11">
+{%- for blurb in page.blurbs %}
+	<div class="place blurb group" data-group="{% unless forloop.first %}{{ forloop.index0 }}{% endunless %}"{% unless forloop.first %} hidden{% endunless %} style="left:0;top:320px;z-index:20">
+		<p><span class="title">{{ blurb.title }}</span><br>{{ blurb.text }}</p>
+	</div>
+{%- endfor %}
+	<nav class="place menu" aria-label="7 acts of love" style="left:530px;top:225px;z-index:10">
+		<p><a href="{{ 'archive/' | relative_url }}" data-show="3">archive</a></p>
+		<p><a href="{{ 'session.html' | relative_url }}" data-show="1">god-therapist session</a><br>Please ensure that your speakers are turned <span class="hilite">ON.</span></p>
+		<p><span class="menu-item" tabindex="0" data-show="2">Live residency</span></p>
+	</nav>
+</main>

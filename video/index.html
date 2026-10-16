@@ -1,0 +1,19 @@
+---
+title: "7 acts of love: video"
+body_class: in-window video
+---
+<div class="tabs">
+	<section class="tab-panel" id="list">
+		<ul class="video-list">
+{%- for video in site.data.videos %}
+			<li><a href="#{{ video.id }}">{{ video.title }}</a></li>
+{%- endfor %}
+		</ul>
+	</section>
+{%- for video in site.data.videos %}
+	<section class="tab-panel" id="{{ video.id }}">
+		<video src="{{ video.id | prepend: 'video/' | append: '.mp4' | relative_url }}" width="320" height="240" controls playsinline preload="none" aria-label="{{ video.title }}"></video>
+		<p><a href="#list">&larr; all videos</a></p>
+	</section>
+{%- endfor %}
+</div>

@@ -277,7 +277,7 @@ sevenacts.js, unchanged apart from tidying up the way words are counted.
 		input.value = '';
 		input.disabled = false;
 		note(nick + ' has just entered the room');
-		play('start.mp3', function () {
+		play('audio/start.mp3', function () {
 			note(INTRO);
 		}, function () {
 			if (ended) return;

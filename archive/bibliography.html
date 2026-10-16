@@ -1,64 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>7 acts of love: archive</title>
-<script language="JavaScript" type="text/javascript" src="../js/x.js"></script>
-<script language="JavaScript" type="text/javascript" src="../js/archive.js"></script>
-<script language="JavaScript" type="text/javascript">
-<!--
-window.onload = function()
-{
-    var positions_x = [420,24,230,390,125,312,2,200,400,13,213,401,130,280,430];
-    var positions_y = [21,148,167,152,284,298,416,437,450,558,568,574,690,679,681];
-    _x += (xClientWidth() >= 540) ? (xClientWidth() - 540)/2: 0;
-    var sequence = randomSequence(positions_x.length,0,positions_x.length-1);
-    for (i=0; i<positions_x.length; i++){
-        var x_pos = 0;
-        if (positions_x[sequence[i]] > 300) {
-            x_pos = _x + positions_x[sequence[i]] + (Math.floor(Math.random()*_x));
-        } else if (positions_x[sequence[i]] < 100) {
-            x_pos = _x + positions_x[sequence[i]] - (Math.floor(Math.random()*_x));
-        } else {
-            x_pos = _x + positions_x[sequence[i]];
-        }
-        xMoveTo('blob'+i, x_pos, positions_y[sequence[i]]);
-        xZIndex('blob'+i, 10);
-        xShow('blob'+i);
-    }
-    xMoveTo('archive_spine', _x, _y + 30);
-    xZIndex('archive_spine', 9);
-    xShow('archive_spine');
-    xMoveTo('blob', _x + 35, _y + 20);
-    xZIndex('blob', 9);
-    xShow('blob');
-    xMoveTo('bibliography_text', _x + 64, _y + 32);
-    xZIndex('bibliography_text', 10);
-    xShow('bibliography_text');
-    xAddEventListener(document, "mousemove", move, false);
-}
-//-->
-</script>
-<link rel="stylesheet" href="../css/archive.css" type="text/css" />
-</head>
-<body>
-<div id="archive_spine" class="abs"><a href="index.html"><img src="images/archive_spine.gif" alt="Say Cheese" width="21" height="60" border="0" /></a></div>
-<div id="blob" class="abs"><img src="images/small_green_blob.gif" name="blobimage" id="blobimage" alt="" width="245" height="76" border="0" /></div>
-<div id="bibliography_text" class="abs"><img src="images/bibliography_text.gif" alt="BIBLIOGRAPHY" width="192" height="67" border="0" /></div>
-<div id="blob0" class="abs"><a href="javascript:popup('bibliography12.html',720,1058,0,0,'scrollbars');"><img src="images/bibliography_blob12.gif" name="blob12" alt="Interview - Israel 2" width="120" height="120" border="0" /></a></div>
-<div id="blob1" class="abs"><a href="javascript:popup('bibliography1.html',1108,500,0,0,'scrollbars');"><img src="images/bibliography_blob1.gif" name="blob1" alt="Private space and common places - Wibke Behrens" width="120" height="120" border="0" /></a></div>
-<div id="blob2" class="abs"><a href="javascript:popup('bibliography2.html',576,500,0,0,'scrollbars');"><img src="images/bibliography_blob2.gif" name="blob2" alt="Time Out June 12-19 2002" width="120" height="120" border="0" /></a></div>
-<div id="blob3" class="abs"><a href="javascript:popup('bibliography3.html',520,935,0,0,'scrollbars');"><img src="images/bibliography_blob3.gif" name="blob3" alt="sleazenation" width="120" height="120" border="0" /></a></div>
-<div id="blob4" class="abs"><a href="javascript:popup('bibliography4.html',1120,500,0,0,'scrollbars');"><img src="images/bibliography_blob4.gif" name="blob4" alt="Michael Gillespie" width="120" height="120" border="0" /></a></div>
-<div id="blob5" class="abs"><a href="javascript:popup('bibliography5.html',1032,700,0,0,'scrollbars');"><img src="images/bibliography_blob5.gif" name="blob5" alt="Interview Israel 1" width="120" height="120" border="0" /></a></div>
-<div id="blob6" class="abs"><a href="javascript:popup('bibliography6.html',570,1056,0,0,'scrollbars');"><img src="images/bibliography_blob6.gif" name="blob6" alt="Bristol Review" width="120" height="120" border="0" /></a></div>
-<div id="blob7" class="abs"><a href="javascript:popup('bibliography7.html',771,550,0,0,'scrollbars');"><img src="images/bibliography_blob7.gif" name="blob7" alt="Anna Stern - Berlin" width="120" height="120" border="0" /></a></div>
-<div id="blob8" class="abs"><a href="javascript:popup('bibliography8.html',520,775,0,0,'scrollbars');"><img src="images/bibliography_blob8.gif" name="blob8" alt="Press Realease - Liverpool Biennial" width="120" height="120" border="0" /></a></div>
-<div id="blob9" class="abs"><a href="javascript:popup('bibliography9.html',1062,984,0,0,'scrollbars');"><img src="images/bibliography_blob9.gif" name="blob9" alt="Interview - Ljublijana" width="120" height="120" border="0" /></a></div>
-<div id="blob10" class="abs"><a href="javascript:popup('bibliography10.html',720,1042,0,0,'scrollbars');"><img src="images/bibliography_blob10.gif" name="blob10" alt="Interview - Israel 4" width="120" height="120" border="0" /></a></div>
-<div id="blob11" class="abs"><a href="javascript:popup('bibliography11.html',720,1055,0,0,'scrollbars');"><img src="images/bibliography_blob11.gif" name="blob11" alt="Interview - Israel 3" width="120" height="120" border="0" /></a></div>
-<div id="blob12" class="abs"><a href="javascript:popup('bibliography13.html',720,988,0,0,'scrollbars');"><img src="images/bibliography_blob13.gif" name="blob13" alt="Press Release - Home" width="120" height="120" border="0" /></a></div>
-<div id="blob13" class="abs"><a href="javascript:popup('bibliography14.html',720,970,0,0,'scrollbars');"><img src="images/bibliography_blob14.gif" name="blob14" alt="Press Release - NY" width="120" height="120" border="0" /></a></div>
-<div id="blob14" class="abs"><a href="javascript:popup('bibliography15.html',542,763,0,0,'scrollbars');"><img src="images/bibliography_blob15.gif" name="blob15" alt="Flash Art review" width="120" height="120" border="0" /></a></div>
-</body>
-</html>
+---
+title: "7 acts of love: archive: bibliography"
+body_class: collage
+# where the cuttings' blobs can go; site.js deals them out at random
+slots: [[420, 21], [24, 148], [230, 167], [390, 152], [125, 284], [312, 298], [2, 416], [200, 437],
+        [400, 450], [13, 558], [213, 568], [401, 574], [130, 690], [280, 679], [430, 681]]
+---
+<main class="stage" data-fit style="width:540px;height:820px">
+	<a class="place spine" href="{{ 'archive/' | relative_url }}" style="left:0;top:30px;z-index:9"><img src="{{ 'archive/images/archive_spine.gif' | relative_url }}" width="21" height="60" alt="Back to the archive"></a>
+	<img class="place" src="{{ 'archive/images/small_green_blob.gif' | relative_url }}" width="245" height="76" alt="" style="left:35px;top:20px;z-index:9">
+	<h1><img class="place" src="{{ 'archive/images/bibliography_text.gif' | relative_url }}" width="192" height="67" alt="bibliography" style="left:64px;top:32px;z-index:10"></h1>
+	<div data-deal="{{ page.slots | jsonify }}">
+{%- for item in site.data.bibliography %}{% assign slot = page.slots[forloop.index0] %}
+		<a class="place" href="{{ item.image | prepend: 'archive/images/' | relative_url }}" data-window="{{ item.w }}x{{ item.h }}" data-name="bibliography" data-title="{{ item.title }}" style="left:{{ slot[0] }}px;top:{{ slot[1] }}px;z-index:10"><img src="{{ item.blob | prepend: 'archive/images/' | relative_url }}" width="120" height="120" alt="{{ item.title }}"></a>
+{%- endfor %}
+	</div>
+</main>

@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Are you Marcus Fisher"
-AuthUserFile /home/eorg/7acts_passwords
-Require user 7acts
