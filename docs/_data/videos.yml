@@ -1,0 +1,19 @@
+# videos in the player (video/index.html); the files are video/<id>.mp4, 320x240
+# they were Flash movies, converted to MP4 in 2026
+
+- id: telaviv
+  title: Interventions - Tel Aviv
+- id: turkishcafe
+  title: Turkish Men's cafe - Berlin
+- id: soho
+  title: Soho, London
+- id: dancing
+  title: Dancing with men - Meron mountain (North of Israel)
+- id: popvideo
+  title: Extracts from 'pop video' - What is it Like for You
+- id: wake
+  title: Extracts from video Marcus Fisher's wake
+- id: saycheesenyc
+  title: Extracts from 'Say Cheese' - foxy Production Gallery, NYC
+- id: saycheesebiennial
+  title: Extracts from 'Say Cheese' - Holiday Inn Hotel - Liverpool Biennial

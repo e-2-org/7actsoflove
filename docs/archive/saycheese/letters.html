@@ -1,0 +1,17 @@
+---
+title: "Say Cheese: letters to participants"
+body_class: in-window letters
+---
+{%- assign letters = site.letters | sort: "order" -%}
+<div class="tabs">
+	<nav class="tab-nav" aria-label="Letters">
+{%- for letter in letters %}
+		<a href="#{{ letter.title }}">{{ letter.title }}</a>
+{%- endfor %}
+	</nav>
+{%- for letter in letters %}
+	<article class="tab-panel" id="{{ letter.title }}">
+{{ letter.content }}
+	</article>
+{%- endfor %}
+</div>

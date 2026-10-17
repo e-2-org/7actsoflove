@@ -1,0 +1,20 @@
+---
+title: "Say Cheese: diagrams"
+body_class: in-window letters diagrams
+# the drawings are archive/saycheese/images/diagram1.gif ... diagram<count>.gif, 600x423
+count: 11
+---
+<div class="tabs">
+	<nav class="tab-nav" aria-label="Diagrams">
+		<a href="#" data-step="-1">previous</a>
+{%- for n in (1..page.count) %}
+		<a href="#d{{ n }}">{{ n }}</a>
+{%- endfor %}
+		<a href="#" data-step="1">next</a>
+	</nav>
+{%- for n in (1..page.count) %}
+	<figure class="tab-panel" id="d{{ n }}">
+		{% if n < page.count %}<a href="#d{{ n | plus: 1 }}">{% endif %}<img src="{{ n | prepend: 'archive/saycheese/images/diagram' | append: '.gif' | relative_url }}" width="600" height="423" alt="Say Cheese bed diagram {{ n }}">{% if n < page.count %}</a>{% endif %}
+	</figure>
+{%- endfor %}
+</div>

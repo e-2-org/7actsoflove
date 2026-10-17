@@ -1,0 +1,16 @@
+---
+title: "Marcus Fisher: self portraits"
+body_class: in-window thumbs self-portraits
+---
+<main>
+<p>Self Portrait as Marcus Fisher 1- 5<br>
+&copy; Oreet Ashery 2000</p>
+<p>Edition of 5 Lambda prints 110x100 cm<br>
+Original work:10x8 polaroid<br>
+photographer : Manuel Vason</p>
+<ul class="thumb-list">
+{%- for n in (1..5) %}
+	<li><a href="{{ n | prepend: 'archive/images/self-portraits/' | append: '.jpg' | relative_url }}" data-window="548x700" data-name="sp" data-gallery="self-portraits" data-title="Self Portrait {{ n }}"><img src="{{ n | prepend: 'archive/images/self-portraits/thumbs/' | append: '.jpg' | relative_url }}" width="160" height="200" alt="Self Portrait {{ n }}"></a></li>
+{%- endfor %}
+</ul>
+</main>

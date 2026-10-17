@@ -1,0 +1,4 @@
+{%- comment -%}
+an image placed on a stage: include.item has src, w, h, x, y and optionally z, alt
+{%- endcomment -%}
+<img class="place" src="{{ include.item.src | relative_url }}" width="{{ include.item.w }}" height="{{ include.item.h }}" alt="{{ include.item.alt }}" style="left:{{ include.item.x }}px;top:{{ include.item.y }}px{% if include.item.z %};z-index:{{ include.item.z }}{% endif %}">

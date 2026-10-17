@@ -1,0 +1,80 @@
+# press cuttings on archive/bibliography.html
+# blob: the shaped thumbnail (120x120), in archive/images/
+# image: the cutting, in archive/images/, with its width and height
+# the blobs are placed at random in the slots listed on the page
+
+- title: Private space and common places - Wibke Behrens
+  blob: bibliography_blob1.gif
+  image: wibke_behrens.gif
+  w: 1088
+  h: 500
+- title: Time Out June 12-19 2002
+  blob: bibliography_blob2.gif
+  image: timeout.gif
+  w: 556
+  h: 500
+- title: sleazenation
+  blob: bibliography_blob3.gif
+  image: sleazenation.jpg
+  w: 500
+  h: 935
+- title: Michael Gillespie
+  blob: bibliography_blob4.gif
+  image: michaelgillespie.gif
+  w: 1100
+  h: 500
+- title: Interview - Israel 1
+  blob: bibliography_blob5.gif
+  image: interviewisrael1.gif
+  w: 1012
+  h: 700
+- title: Bristol Review
+  blob: bibliography_blob6.gif
+  image: bristolreview.gif
+  w: 550
+  h: 1056
+- title: Anna Stern - Berlin
+  blob: bibliography_blob7.gif
+  image: annasternberlin.gif
+  w: 751
+  h: 550
+- title: Press Release - Liverpool Biennial
+  blob: bibliography_blob8.gif
+  image: pressrelease_liverpoolbien.gif
+  w: 500
+  h: 775
+- title: Interview - Ljubljana
+  blob: bibliography_blob9.gif
+  image: interviewljublijana.gif
+  w: 1042
+  h: 984
+- title: Interview - Israel 4
+  blob: bibliography_blob10.gif
+  image: interviewisrael4.jpg
+  w: 700
+  h: 1042
+- title: Interview - Israel 3
+  blob: bibliography_blob11.gif
+  image: interviewisrael3.jpg
+  w: 700
+  h: 1055
+- title: Interview - Israel 2
+  blob: bibliography_blob12.gif
+  image: interviewisrael2.jpg
+  w: 700
+  h: 1058
+- title: Press Release - Home
+  blob: bibliography_blob13.gif
+  image: pressrelease_home.jpg
+  w: 700
+  h: 988
+- title: Press Release - NY
+  blob: bibliography_blob14.gif
+  image: pressrelease_ny.jpg
+  w: 700
+  h: 970
+- title: Flash Art review
+  blob: bibliography_blob15.gif
+  image: flash_art.jpg
+  w: 522
+  h: 763

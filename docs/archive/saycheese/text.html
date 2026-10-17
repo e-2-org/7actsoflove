@@ -1,0 +1,20 @@
+---
+title: "Say Cheese archive: text"
+body_class: in-window saycheese-text
+---
+{%- assign sections = site.saycheese_text | sort: "order" -%}
+<div class="tabs">
+	<header class="text-head">
+		<h1>Say Cheese 2001-3</h1>
+		<nav class="tab-nav" aria-label="Sections">
+{%- for section in sections %}
+			<a href="#{{ section.title }}">{{ section.title }}</a>
+{%- endfor %}
+		</nav>
+	</header>
+{%- for section in sections %}
+	<section class="tab-panel" id="{{ section.title }}">
+{{ section.content }}
+	</section>
+{%- endfor %}
+</div>

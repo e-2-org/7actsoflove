@@ -1,0 +1,17 @@
+---
+title: "7 acts of love: archive: bibliography"
+body_class: collage
+# where the cuttings' blobs can go; site.js deals them out at random
+slots: [[420, 21], [24, 148], [230, 167], [390, 152], [125, 284], [312, 298], [2, 416], [200, 437],
+        [400, 450], [13, 558], [213, 568], [401, 574], [130, 690], [280, 679], [430, 681]]
+---
+<main class="stage" data-fit style="width:540px;height:820px">
+	<a class="place spine" href="{{ 'archive/' | relative_url }}" style="left:0;top:30px;z-index:9"><img src="{{ 'archive/images/archive_spine.gif' | relative_url }}" width="21" height="60" alt="Back to the archive"></a>
+	<img class="place" src="{{ 'archive/images/small_green_blob.gif' | relative_url }}" width="245" height="76" alt="" style="left:35px;top:20px;z-index:9">
+	<h1><img class="place" src="{{ 'archive/images/bibliography_text.gif' | relative_url }}" width="192" height="67" alt="bibliography" style="left:64px;top:32px;z-index:10"></h1>
+	<div data-deal="{{ page.slots | jsonify }}">
+{%- for item in site.data.bibliography %}{% assign slot = page.slots[forloop.index0] %}
+		<a class="place" href="{{ item.image | prepend: 'archive/images/' | relative_url }}" data-window="{{ item.w }}x{{ item.h }}" data-name="bibliography" data-title="{{ item.title }}" style="left:{{ slot[0] }}px;top:{{ slot[1] }}px;z-index:10"><img src="{{ item.blob | prepend: 'archive/images/' | relative_url }}" width="120" height="120" alt="{{ item.title }}"></a>
+{%- endfor %}
+	</div>
+</main>

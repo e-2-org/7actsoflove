@@ -1,0 +1,82 @@
+# Say Cheese photos on archive/saycheese/photos.html, one entry per city
+#
+# blob, label: the coloured blob and the city's name, in archive/images/
+# x, y:        where the blob sits on the page; the whole group then drifts
+#              sideways by a random amount (drift: 1 to the right, -1 to the left)
+# label_at:    where the name sits, relative to the blob's left edge and the page top
+# photos:      [x, y] of each thumbnail, relative to the blob's left edge and the page top;
+#              the photos are archive/saycheese/images/photos/1000x700/<city><n>.jpg
+#              with 50x35 thumbnails in .../photos/thumbs/
+
+- city: berlin
+  name: Berlin
+  blob: blue_blob.gif
+  label: { src: berlin_text.gif, w: 116, h: 45 }
+  label_at: [360, 74]
+  x: 50
+  y: 75
+  drift: 1
+  photos: [[20, 120], [90, 155], [170, 100], [267, 127], [400, 145]]
+
+- city: london
+  name: London
+  blob: red_blob.gif
+  label: { src: london_text.gif, w: 133, h: 55 }
+  label_at: [-50, 200]
+  x: 50
+  y: 215
+  drift: -1
+  photos: [[25, 260], [108, 240], [220, 330], [270, 217], [382, 290], [410, 235], [210, 280],
+           [290, 270], [120, 295], [178, 225], [50, 320], [450, 280], [340, 222], [280, 319]]
+
+- city: liverpool
+  name: Liverpool
+  blob: purple_blob.gif
+  label: { src: liverpool_text.gif, w: 148, h: 44 }
+  label_at: [340, 375]
+  x: 28
+  y: 375
+  drift: 1
+  # the eighth photo had no place in the original page; it now has one
+  photos: [[10, 420], [64, 372], [252, 446], [136, 410], [200, 380], [315, 430], [410, 420], [140, 468]]
+
+- city: ny
+  name: New York
+  blob: green_blob.gif
+  label: { src: ny_text.gif, w: 162, h: 45 }
+  label_at: [-50, 520]
+  x: 80
+  y: 520
+  drift: -1
+  # the seventh photo had no place in the original page; it now has one
+  photos: [[20, 570], [110, 563], [167, 610], [230, 574], [300, 536], [390, 590], [370, 548]]
+
+- city: bristol
+  name: Bristol
+  blob: orange_blob.gif
+  label: { src: bristol_text.gif, w: 111, h: 52 }
+  label_at: [340, 665]
+  x: 28
+  y: 670
+  drift: 1
+  photos: [[10, 740], [105, 700], [210, 770], [312, 742], [400, 758]]
+
+- city: ljublijana
+  name: Ljubljana
+  blob: pink_blob.gif
+  label: { src: ljublijana_text.gif, w: 154, h: 63 }
+  label_at: [-50, 830]
+  x: 50
+  y: 822
+  drift: -1
+  photos: [[130, 910], [250, 875], [379, 920]]
+
+- city: linz
+  name: Linz
+  blob: yellow_blob.gif
+  label: { src: linz_text.gif, w: 101, h: 47 }
+  label_at: [340, 965]
+  x: 28
+  y: 980
+  drift: 1
+  photos: [[20, 1010], [230, 1070], [376, 1034]]

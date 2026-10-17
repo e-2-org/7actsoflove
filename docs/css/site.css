@@ -1,0 +1,439 @@
+/*
+7 acts of love - site styles
+the look of each page follows its original stylesheet
+*/
+:root {
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #666;
+  font: 12pt Geneva, Arial, Helvetica, sans-serif;
+}
+img {
+  border: 0;
+}
+h1 {
+  margin: 0;
+  font-size: inherit;
+}
+
+/* ---------- stages: pictures placed as on the original pages ---------- */
+
+/* the stage keeps its original size; site.js zooms it out on narrow screens */
+.stage {
+  position: relative;
+  margin: 0 auto;
+}
+.place {
+  position: absolute;
+  display: block;
+}
+.place img,
+.spines img {
+  display: block;
+}
+.group[hidden] {
+  display: none;
+}
+.spines {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+}
+.spines a,
+a.spine {
+  z-index: 10;
+}
+.spines a:focus-visible,
+a.place:focus-visible,
+.menu a:focus-visible,
+.menu-item:focus-visible {
+  outline: 2px solid #f9c;
+  outline-offset: 1px;
+}
+/* each place's own drift (photos page) */
+.drift {
+  position: absolute;
+  top: 0;
+  transition: translate .6s var(--ease);
+}
+
+/* bookshelf pages sit in the middle of the window */
+body.shelf {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body.background {
+  background: #82b6e8 url(../archive/images/background_bg.jpg) repeat-x;
+}
+body.collage {
+  overflow-x: hidden;
+}
+
+/* ---------- home page ---------- */
+
+body.home {
+  overflow-x: hidden;
+}
+.home .drawing {
+  background: url(../images/drawing_bg.gif) repeat-y;
+}
+.home .blurb {
+  width: 270px;
+  color: #666;
+}
+.home .title {
+  font: bold 18px Geneva, Arial, Helvetica, sans-serif;
+  color: #333;
+}
+.home .hilite {
+  font: bold 18px Geneva, Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #fcf;
+}
+.home .menu {
+  width: 270px;
+  font: bold 15px Geneva, Arial, Helvetica, sans-serif;
+  color: #999;
+  background-color: #fff;
+}
+.home .menu a,
+.home .menu-item {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.home .menu a:hover,
+.home .menu a:focus-visible,
+.home .menu-item:hover,
+.home .menu-item:focus-visible {
+  background-color: #fcf;
+}
+.home .menu-item {
+  cursor: default;
+}
+/* phones: the drawing, then the text and the menu */
+@media (max-width: 700px) {
+  .home .stage {
+    width: auto !important;
+    height: auto !important;
+    padding: 16px;
+  }
+  .home .place {
+    position: static;
+  }
+  .home .blob,
+  .home .leaves {
+    display: none;
+  }
+  .home .drawing {
+    width: 125px;
+    margin: 0 auto 16px;
+    background-size: 125px 1px;
+  }
+  .home .drawing img {
+    width: 125px;
+    height: auto;
+  }
+  .home .blurb,
+  .home .menu {
+    width: auto;
+  }
+  .home .menu {
+    margin-top: 16px;
+  }
+}
+
+/* ---------- windows (were popups) ---------- */
+
+.win {
+  position: fixed;
+  z-index: 500;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .25);
+  visibility: hidden;
+  opacity: 0;
+  scale: .96;
+  transition:
+    opacity .25s var(--ease),
+    scale .25s var(--ease),
+    visibility 0s linear .25s;
+}
+.win.is-open {
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
+  transition-delay: 0s;
+}
+.win-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  padding: 0 0 0 8px;
+  background: #fcf;
+  color: #333;
+  font: 12px Geneva, Arial, Helvetica, sans-serif;
+  cursor: move;
+  user-select: none;
+  touch-action: none;
+}
+.win-title {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.win-close {
+  width: 32px;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: bold 18px/1 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.win-close:hover,
+.win-close:focus-visible {
+  background: rgba(0, 0, 0, .12);
+  outline: none;
+}
+@media (pointer: coarse) {
+  .win-bar { height: 40px; font-size: 14px; }
+  .win-close { width: 48px; font-size: 24px; }
+}
+.win-body {
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.win-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.win-body > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.win-body.is-gallery > img {
+  cursor: pointer;
+}
+
+/* ---------- pages shown in windows ---------- */
+
+body.in-window {
+  margin: 0;
+}
+
+/* tabbed pages: one panel at a time (site.js), all of them without scripts */
+.js .tab-panel[hidden] {
+  display: none;
+}
+
+/* background text */
+.background-text main {
+  margin: 40pt;
+  color: #000;
+}
+.background-text p {
+  font: 12pt arial, helvetica, sans-serif;
+}
+.background-text .italic {
+  font-style: italic;
+}
+
+/* thumbnails that open pictures */
+.thumbs main {
+  padding: 12px;
+}
+.thumbs h1 img {
+  display: block;
+}
+.thumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 24px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.thumb-list img {
+  display: block;
+}
+.other-images .thumb-list {
+  gap: 12px;
+}
+.self-portraits .thumb-list {
+  align-items: flex-start;
+}
+.self-portraits p {
+  margin: 0 0 12px;
+  font: 12pt verdana, arial, helvetica, sans-serif;
+  color: #333;
+}
+
+/* Say Cheese text */
+.saycheese-text {
+  color: #000;
+}
+.saycheese-text p {
+  font: 14pt Verdana, Helvetica, sans-serif;
+}
+.saycheese-text .large {
+  font: 18pt Verdana, Helvetica, sans-serif;
+}
+.saycheese-text .largebold {
+  font: bold 16pt Verdana, Helvetica, sans-serif;
+}
+.saycheese-text .small {
+  font: 9pt Verdana, Helvetica, sans-serif;
+}
+.saycheese-text .bold {
+  font-weight: bold;
+}
+.text-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+.text-head h1 {
+  font: 18pt Verdana, Helvetica, sans-serif;
+}
+.saycheese-text .tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.saycheese-text .tab-nav a {
+  padding: 4px;
+  border: 1px dotted #ccc;
+  font: 10pt courier, monospace;
+  color: #000;
+  text-decoration: none;
+}
+.saycheese-text .tab-nav a:hover,
+.saycheese-text .tab-nav a[aria-current] {
+  border-color: #999;
+  background-color: #ccc;
+}
+.saycheese-text .tab-panel {
+  padding: 0 20px 20px;
+}
+
+/* letters, replies and diagrams */
+.letters {
+  font: 12px "Courier New", Courier, monospace;
+}
+.letters .tab-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0 5px 0 0;
+  background: #fff;
+}
+.letters .tab-nav a,
+.letters .tab-panel a {
+  font: 12px "Courier New", Courier, monospace;
+  text-decoration: none;
+}
+.letters .tab-nav a {
+  display: block;
+  padding: 3px;
+  color: #999;
+  background-color: #fff;
+}
+.letters .tab-nav a:hover,
+.letters .tab-nav a[aria-current] {
+  color: #000;
+  background-color: #ccc;
+}
+.letters .tab-nav a[hidden] {
+  display: none;
+}
+.letters .tab-panel {
+  max-width: 460px;
+  margin: 0;
+  padding: 0 20px 20px;
+}
+.letters p {
+  font: 12px "Courier New", Courier, monospace;
+  line-height: 16px;
+  margin: 16px 0;
+}
+.letters h2 {
+  font: bold 14px "Courier New", Courier, monospace;
+  color: #999;
+}
+.letters p.hr {
+  border-top: 2px solid #ccc;
+  margin: 5px 0;
+  line-height: 0;
+}
+.letters .quote {
+  font-style: italic;
+  color: #999;
+}
+.letters .author {
+  color: #333;
+}
+.letters .tab-panel a {
+  color: #999;
+}
+.diagrams .tab-panel {
+  max-width: none;
+  padding: 5px;
+}
+.diagrams .tab-panel img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* video player */
+body.video {
+  background-color: #000;
+  color: #fff;
+}
+.video-list {
+  margin: 0;
+  padding: 20px 20px 20px 40px;
+  list-style-image: url(../archive/images/video_li.gif);
+}
+.video a {
+  font: bold 12pt Geneva, arial, helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+.video a:hover,
+.video a:focus-visible {
+  text-decoration: underline;
+}
+.video .tab-panel:not(#list) {
+  padding: 10px;
+}
+.video video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+.video .tab-panel p {
+  margin: 8px 0 0;
+}

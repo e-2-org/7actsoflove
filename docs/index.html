@@ -1,0 +1,30 @@
+---
+title: 7 acts of love
+body_class: home
+# what the text on the left says while each menu item is pointed at; the first is shown otherwise
+blurbs:
+  - title: 7 acts of love
+    text: Say Cheese is artist Oreet Ashery's series of experimental, process based interactions with her alter-ego Marcus Fisher that took place in 7 bedrooms across the world. There is extensive documentation of Say Cheese in the Archive section. Ashery has also created a new piece especially for the web, a permanent interactive sound work that can be found in the &lsquo;god-therapist session&rsquo; section.
+  - title: god-therapist session
+    text: Requires JavaScript to be enabled. Please ensure that your speakers are turned ON.
+  - title: Live residency
+    text: A live residency took place in April 2004 where participants talked live to Marcus Fisher about love and loss.
+  - title: archive
+    text: Background material about the artist and the project.
+---
+<main class="stage" data-hover-stage style="width:800px;height:600px">
+	<div class="place drawing" style="left:275px;top:0;z-index:2"><img src="{{ 'images/oreet_drawing.gif' | relative_url }}" width="249" height="600" alt=""></div>
+	<img class="place blob" src="{{ 'images/pink_blob.gif' | relative_url }}" width="490" height="151" alt="" style="left:-280px;top:440px;z-index:1">
+	<img class="place blob" src="{{ 'images/pink_blob.gif' | relative_url }}" width="490" height="151" alt="" style="left:670px;top:430px;z-index:1">
+	<img class="place leaves" src="{{ 'images/leaves_top.gif' | relative_url }}" width="145" height="280" alt="" style="left:50px;top:45px;z-index:11">
+{%- for blurb in page.blurbs %}
+	<div class="place blurb group" data-group="{% unless forloop.first %}{{ forloop.index0 }}{% endunless %}"{% unless forloop.first %} hidden{% endunless %} style="left:0;top:320px;z-index:20">
+		<p><span class="title">{{ blurb.title }}</span><br>{{ blurb.text }}</p>
+	</div>
+{%- endfor %}
+	<nav class="place menu" aria-label="7 acts of love" style="left:530px;top:225px;z-index:10">
+		<p><a href="{{ 'archive/' | relative_url }}" data-show="3">archive</a></p>
+		<p><a href="{{ 'session.html' | relative_url }}" data-show="1">god-therapist session</a><br>Please ensure that your speakers are turned <span class="hilite">ON.</span></p>
+		<p><span class="menu-item" tabindex="0" data-show="2">Live residency</span></p>
+	</nav>
+</main>

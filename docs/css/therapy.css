@@ -1,0 +1,201 @@
+/*
+7 acts of love - god-therapist session (static version)
+colours and fonts follow the original sevenacts.css / session.css
+*/
+body {
+  margin: 0;
+  padding: 8px 16px 32px;
+  font: 12pt Geneva, Arial, Helvetica, sans-serif;
+  color: #666;
+  background-color: #fff;
+}
+h1 {
+  margin: 0;
+}
+img {
+  display: block;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.img-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.img-button:focus-visible,
+.beds button:focus-visible,
+.sticks button:focus-visible {
+  outline: 2px solid #6699ff;
+  outline-offset: 2px;
+}
+.error {
+  min-height: 1.2em;
+  margin: 4px 0;
+  font-size: 11px;
+  color: #c00;
+}
+
+/* ---------- step 1: bedrooms ---------- */
+.beds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 158px);
+  justify-content: center;
+  align-items: start;
+  margin-top: 8px;
+}
+.beds button {
+  padding: 4px;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+.beds button:hover {
+  background-color: #ffcccc;
+}
+.beds button[aria-pressed="true"] {
+  background-color: #ff9999;
+}
+.beds img {
+  width: 150px;
+  height: auto;
+}
+.nick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.nick .error {
+  flex-basis: 100%;
+  text-align: center;
+}
+#nick {
+  width: 180px;
+  font: inherit;
+  font-size: 11px;
+}
+
+/* ---------- step 2: where to sit ---------- */
+.step-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.position,
+.session {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.sticks {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+.sticks button {
+  padding: 4px;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+.sticks button:hover {
+  background-color: #99ffff;
+}
+.sticks button[aria-pressed="true"] {
+  background-color: #6699ff;
+}
+
+/* the bedroom photo with the chosen stick figure laid over it */
+.room {
+  display: grid;
+  max-width: 800px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.room img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- step 3: session ---------- */
+.session {
+  margin-top: 12px;
+}
+.chat {
+  flex: none;
+  width: 180px;
+}
+.log {
+  height: 400px;
+  overflow-y: auto;
+  font: 11px verdana, arial, helvetica, sans-serif;
+  color: #999;
+  overflow-wrap: break-word;
+}
+.log p {
+  margin: 0 0 2px;
+  text-align: justify;
+}
+.log .entry {
+  font-style: italic;
+  color: #666;
+}
+.log b {
+  color: #333;
+}
+.input-box {
+  box-sizing: border-box;
+  width: 180px;
+  border: 1px solid #f00;
+  font: 11px verdana, arial, helvetica, sans-serif;
+}
+.input-box:disabled {
+  border-color: #ccc;
+}
+.chat-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* phones: stack the room above the controls */
+@media (max-width: 640px) {
+  .step-head {
+    align-items: center;
+  }
+  .position {
+    flex-direction: column-reverse;
+  }
+  .sticks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sticks img {
+    width: 100px;
+    height: auto;
+  }
+  .session {
+    flex-direction: column-reverse;
+  }
+  .room {
+    width: 100%;
+  }
+  .chat,
+  .input-box {
+    width: 100%;
+  }
+  .log {
+    height: 40vh;
+  }
+}

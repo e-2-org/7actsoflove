@@ -1,0 +1,19 @@
+---
+title: "Say Cheese: replies from participants"
+body_class: in-window letters
+---
+{%- assign replies = site.replies | sort: "order" -%}
+<div class="tabs">
+	<nav class="tab-nav" aria-label="Replies">
+		<a href="#" data-step="-1">previous</a>
+{%- for reply in replies %}
+		<a href="#reply{{ reply.order }}">{{ reply.order }}</a>
+{%- endfor %}
+		<a href="#" data-step="1">next</a>
+	</nav>
+{%- for reply in replies %}
+	<article class="tab-panel" id="reply{{ reply.order }}">
+{{ reply.content }}
+	</article>
+{%- endfor %}
+</div>

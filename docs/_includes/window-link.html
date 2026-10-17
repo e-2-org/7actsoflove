@@ -1,0 +1,4 @@
+{%- comment -%}
+attributes for a link that opens in a window: include.item has window ("WIDTHxHEIGHT"), and optionally name and title
+{%- endcomment -%}
+{%- if include.item.window %} data-window="{{ include.item.window }}"{% if include.item.name %} data-name="{{ include.item.name }}"{% endif %}{% if include.item.title %} data-title="{{ include.item.title }}"{% endif %}{% endif -%}

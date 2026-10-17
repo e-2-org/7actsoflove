@@ -1,0 +1,19 @@
+---
+title: "7 acts of love: archive: say cheese: photos"
+body_class: collage
+---
+<main class="stage" data-fit style="width:600px;height:1130px">
+	<a class="place spine" href="{{ 'archive/' | relative_url }}" style="left:10px;top:10px;z-index:9"><img src="{{ 'archive/images/archive_spine.gif' | relative_url }}" width="21" height="60" alt="Archive"></a>
+	<a class="place spine" href="{{ 'archive/saycheese/' | relative_url }}" style="left:280px;top:12px;z-index:9"><img src="{{ 'images/say_cheese_spine.gif' | relative_url }}" width="17" height="60" alt="Say Cheese"></a>
+	<img class="place" src="{{ 'archive/images/yellow_blob.gif' | relative_url }}" width="245" height="75" alt="" style="left:40px;top:10px;z-index:1">
+	<h1><img class="place" src="{{ 'archive/saycheese/images/photos_text.gif' | relative_url }}" width="141" height="40" alt="photos" style="left:60px;top:23px;z-index:3"></h1>
+{%- for city in site.data.photos %}
+	<section class="drift" data-drift="{{ city.drift }}" style="left:{{ city.x }}px" aria-label="{{ city.name }}">
+		<img class="place" src="{{ city.blob | prepend: 'archive/images/' | relative_url }}" width="490" height="151" alt="" style="left:0;top:{{ city.y }}px;z-index:1">
+		<img class="place" src="{{ city.label.src | prepend: 'archive/images/' | relative_url }}" width="{{ city.label.w }}" height="{{ city.label.h }}" alt="{{ city.name }}" style="left:{{ city.label_at[0] }}px;top:{{ city.label_at[1] }}px;z-index:3">
+{%- for at in city.photos %}{% capture photo %}{{ city.city }}{{ forloop.index }}.jpg{% endcapture %}
+		<a class="place" href="{{ photo | prepend: 'archive/saycheese/images/photos/1000x700/' | relative_url }}" data-window="1000x700" data-name="photo" data-gallery="photos" data-title="Say Cheese: {{ city.name }} {{ forloop.index }}" style="left:{{ at[0] }}px;top:{{ at[1] }}px;z-index:2"><img src="{{ photo | prepend: 'archive/saycheese/images/photos/thumbs/' | relative_url }}" width="50" height="35" alt="{{ city.name }} {{ forloop.index }}"></a>
+{%- endfor %}
+	</section>
+{%- endfor %}
+</main>

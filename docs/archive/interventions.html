@@ -1,0 +1,18 @@
+---
+title: "Oreet Ashery: interventions"
+body_class: in-window thumbs
+images:
+  - { file: soho1.jpg, title: "Soho, London: 1" }
+  - { file: soho2.jpg, title: "Soho, London: 2" }
+  - { file: soho3.jpg, title: "Soho, London: 3" }
+  - { file: tel-aviv.jpg, title: Tel Aviv }
+  - { file: turkish-cafe.jpg, title: "Turkish mens cafe, Berlin" }
+---
+<main>
+<h1><img src="{{ 'archive/images/interventions_images_header.gif' | relative_url }}" width="300" height="92" alt="interventions"></h1>
+<ul class="thumb-list">
+{%- for image in page.images %}
+	<li><a href="{{ image.file | prepend: 'archive/images/general/' | relative_url }}" data-window="632x467" data-name="interventions" data-gallery="interventions" data-title="{{ image.title }}"><img src="{{ image.file | prepend: 'archive/images/general/thumbs/' | relative_url }}" width="150" height="111" alt="{{ image.title }}"></a></li>
+{%- endfor %}
+</ul>
+</main>
