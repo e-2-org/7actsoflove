@@ -1,10 +1,10 @@
-# Session: porting 7 acts of love to a static site
+# Session: porting 7 acts of love to a static site - summary
 
 **Date:** 16 October 2026
 **Branch:** `html-port` (from `master`)
 **Commits:** `6758fe2` (the god-therapist session, committed by the user); the Jekyll conversion and clean-up are staged but not yet committed
 
-## Summary
+The transcript is in [transcript.md](transcript.md).
 
 7 acts of love (Oreet Ashery, 2004) was a PHP and MySQL site that needed the Flash 6 plugin:
 - **The god-therapist session** picked a bedroom, a place to sit and a name across three PHP pages, then ran a text chat in iframes. A script chose which of 57 Flash sound clips the therapist played next, depending on the visitor's answers, and every answer was stored in a database.
@@ -13,7 +13,7 @@
 
 This session rebuilt the god-therapist session to run entirely in the browser, then turned the whole site into a Jekyll site for GitHub Pages, with the archive content kept as one file per item.
 
-### What the site does now
+## What the site does now
 
 - **`index.html`** keeps the original home page: the drawing, the leaves, the pink blobs, and a menu that swaps the text on the left. On phones it becomes one column. "Live residency" is now plain text with its hover description, since it never linked anywhere.
 - **`session.html`** is the god-therapist session as one page in three steps: choose a bedroom and type a name, choose where to sit, then the session.
@@ -42,7 +42,7 @@ This session rebuilt the god-therapist session to run entirely in the browser, t
   - the 700×490 copies of the photos
   - 30 images that nothing referenced
 
-### Main files
+## Main files
 
 | File | Role |
 |---|---|
@@ -58,7 +58,7 @@ This session rebuilt the god-therapist session to run entirely in the browser, t
 | `_data/bibliography.yml`, `_data/photos.yml`, `_data/videos.yml` | Press cuttings, photos by city with their positions, and videos |
 | `video/` | The video player page and the 8 MP4s |
 
-### Known gaps
+## Known gaps
 
 - **The therapist's text** was in `includes/config.php`, which isn't in the repo. The 57 lines were transcribed from the recordings, so they may differ slightly from the original wording. Where the old code's comments gave a spelling ("Mmm hmmm…", "Aha…"), that spelling was used.
 - **Clips 48–53 and 56** ("How did you feel immediately after our last session?" and similar) are never reached by the original branching. They look like an unfinished session for returning visitors. The audio and text are kept, but nothing plays them.
@@ -70,7 +70,7 @@ This session rebuilt the god-therapist session to run entirely in the browser, t
 - **Base URL:** `_config.yml` assumes the site will be at `e-2-org.github.io/7actsoflove`, like contact.
 - **Testing:** everything was tested in headless Chrome at 1100×760 and 390×844, served at `/7actsoflove/`. That covered every link target, broken images, script errors, hover swaps, nested windows, galleries, Escape, video playback and the whole god-therapist session. Nothing was tested on a real phone or in Safari or Firefox.
 
-### Data sources
+## Data sources
 
 - **Therapist audio:** the 57 `therapist/s*_therapist.swf` files hold the clips as MP3 sound streams (SoundStreamHead2 and SoundStreamBlock tags). A small Python SWF parser joined the blocks, without the 4-byte seek header each block starts with, into plain MP3s. They are 56kbps mono, 0.6–5.9 seconds long, and all decode without errors. `start.mp3` was already an MP3.
 - **Therapist text:** the clips and `start.mp3` were transcribed with faster-whisper (`medium.en` model), run locally.
@@ -78,51 +78,3 @@ This session rebuilt the god-therapist session to run entirely in the browser, t
 - **Video conversion:** the SWFs hold Sorenson Spark (FLV1) video with MP3 sound, 320×240, which ffmpeg reads directly. They were converted with `ffmpeg -c:v libx264 -crf 20 -preset slow -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart`; `saycheesebiennial` has no sound track.
 - **Archive text:** the letters, replies and text sections were split out of the old pages by a script. Two mangled quote marks in the invitation letter were restored (‘cheese’, "Productions’").
 - **Unused files:** found by listing every file the built site references, from HTML, CSS and the paths `js/therapy.js` builds, then deleting the rest.
-
-## Transcript
-
-This is a condensed record. The user's messages are quoted; Claude's work is summarised.
-
-### 1. A fix to Contact first
-
-> I've just noticed something in repos/contact/contact.html - when you move the mouse cursor upwards from one box to another just above it, the upper box expands down, but the previous box remains visible - can the upper box expand ABOVE the lower box? perhaps change the z-index temporrarily?
-
-The box that was zooming and the one shrinking back both had `z-index: 100`, so whichever came later in the page was drawn on top. Claude gave `.box.is-zoomed` `z-index: 101` in `contact/css/scape.css`. That change is in the contact repo, not this one.
-
-### 2. The god-therapist session
-
-> I've got another project in repos/7actsoflove which was an interactive chat type thing - very simplistic - where users would enter a room and a therapist would ask them questions - I think they answered using a text box, and depending on their answers anothe audio file would be played. I can't remember the flow exactly. If this can be turned into something which will work in a modern browser with no server-side processing it would be amazing!
-
-Claude worked out the flow from the PHP pages and `js/sevenacts.js`, and found that the file holding the therapist's text was missing. It then:
-- wrote a SWF parser and pulled the 57 clips out as MP3s
-- transcribed them with Whisper to rebuild the text
-- wrote `session.html`, `css/therapy.css` and `js/therapy.js`, keeping the original branching
-- pointed the home page menu at the new page
-
-Testing in headless Chrome covered the bedroom and seat checks, the branching, exiting during the intro and the phone layout. The user committed this as `6758fe2` on a new branch, `html-port`.
-
-### 3. Jekyll and clean-up
-
-> I've created as new branch for the work and committed changes - please remove any unused files and convert to a jekyll site so the pages in archive/ are a bit easier to manage
-
-Claude screenshotted the old pages in Chrome to record how they looked, then:
-- converted the 8 Flash videos to MP4
-- split the letters, replies and Say Cheese text into collections
-- moved the bibliography, photos and videos into `_data/`
-- wrote the shelf layout, `css/site.css` and `js/site.js`, using the contact site's windows as the model for the popups
-- rewrote every archive page and the home page to use them
-- deleted the server, Flash and popup files
-
-Checking the built site found a few things, which were fixed:
-- a favicon request at the server root, fixed with an icon link that uses the base URL
-- a `#hash` that scrolled a letter up under its menu
-- the home page text sitting slightly higher than before
-- the broken NY press release link and the two photos that were never shown
-
-Finally, Claude deleted the 30 images nothing referenced, added a README in the same style as contact's, and staged the changes.
-
-### 4. Wrap-up
-
-> Can you write up the sessions as before?
-
-This file.
